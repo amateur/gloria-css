@@ -1,0 +1,73 @@
+<!doctype html>
+<html class="psg-theme" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= projectName %></title>
+  <style><%- codeStyle %><%- tmplStyle %><%- processedCSS %></style>
+</head>
+<body>
+  <div class="psg-wrapper">
+    <nav class="psg-menu">
+      <h1 class="psg-projectName">
+        <a href="/">
+          <%= projectName %>
+        </a>
+      </h1>
+      <ul class="psg-componentList">
+        <% if (Array.isArray(colorPalette) && colorPalette.length !== 0) { %>
+          <a href="#color-palette" class="psg-componentList-item">
+            <li>Color Palette</li>
+          </a>
+        <% } %>
+        <% maps.forEach(function (map) { %>
+          <% if (map.link.title !== null) { %>
+            <a href="#<%= map.link.id %>" class="psg-componentList-item">
+              <li>
+                <%= map.link.title %>
+              </li>
+            </a>
+          <% } %>
+        <% }) %>
+      </ul>
+    </nav>
+
+    <div class="psg-main">
+      <div class="psg-container">
+        <% if (Array.isArray(colorPalette) && colorPalette.length !== 0) { %>
+        <section class="psg-component">
+          <h2 id="color-palette" class="psg-componentTitle">Color Palette</h2>
+          <div class="psg-contents">
+            <div class="psg-colorPalette">
+              <% colorPalette.forEach(function (palette) { %>
+              <div class="psg-colorBox">
+                <div class="psg-colorBox-sample" style="background-color: <%= palette.color %>">
+                </div>
+                <div class="psg-colorBox-color">
+                  Color: <strong><%= palette.color %></strong>
+                </div>
+                <div class="psg-colorBox-name">
+                  Name: <strong><%= palette.name %></strong>
+                </div>
+              </div>
+              <% }) %>
+            </div>
+          </div>
+        </section>
+        <hr class="psg-separator">
+        <% } %>
+        <% maps.forEach(function (map) { %>
+          <section class="psg-component">
+            <h2 id="<%= map.link.id %>" class="psg-componentTitle"><%= map.link.title %></h2>
+            <div class="psg-contents">
+              <div class="psg-contents-html">
+                <%- map.html %>
+              </div>
+            </div>
+          </section>
+          <hr class="psg-separator">
+        <% }) %>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

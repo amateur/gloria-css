@@ -1,0 +1,75 @@
+:root {
+  /*
+  ** Mixins
+  */
+
+  --listReset: {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  };
+
+  --buttonReset: {
+    padding: 0;
+    border: 0;
+    margin: 0;
+    outline: 0;
+    appearance: none;
+    background: none;
+    font-family: var(--fontFamily);
+
+    &:hover, &:focus, &:active {
+      outline: 0;
+    }
+  };
+
+
+  --transitionDurationDefault: 200ms;
+  --transitionEasingDefault: ease;
+  --transitionOptionsDefault: var(--transitionDurationDefault) var(--transitionEasingDefault);
+  --transitionDefault: color var(--transitionDurationDefault) var(--transitionEasingDefault);
+
+  /*
+  ** Font Sizes
+  */
+
+  /*
+  ** Line heights
+  */
+
+  /*
+  ** Font weights
+  */
+
+
+  /*
+  ** Typography
+  */
+  --fontFamilySystem: system-ui, sans-serif;
+  --fontFamily: system-ui, sans-serif;
+
+  /*
+  ** Palette
+  */
+
+  --bgColor: #020217;
+  --bgColor16: color(var(--bgColor) a(16%));
+
+  --textColor: #fff;
+
+  /*
+  ** Metrics
+  */
+
+  --minWidth: 1000px;
+  --maxWidth: 1920px;
+
+  /*
+  ** Breakpoints
+  */
+
+  @custom-media --tablet (min-width: 768px);
+  @custom-media --desktop (min-width: 1025px);
+}
+
+
