@@ -20,10 +20,3 @@ Production builds compile & minify your assets into `/dist` for distribution.
 ```
 npm run prod
 ```
-
-### docs
-Use `npm run doc` to run build styleguide documentation.
-
-```
-npm run doc
-```

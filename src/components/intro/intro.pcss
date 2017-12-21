@@ -6,6 +6,17 @@
   display: flex;
   justify-content: center;
   align-content: center;
+  position: relative;
+
+  &:after {
+    content: "";
+    height: 282px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, var(--bgColor100), var(--bgColor0));
+  }
 }
 
 /*
@@ -19,6 +30,7 @@
   justify-content: center;
   align-content: center;
   flex-direction: column;
+  z-index: 1;
 }
 
 .intro__title {
