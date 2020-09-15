@@ -1,6 +1,6 @@
 # Gloria Bootstrap
 
-Bootstrap elements for Gloria. 
+Bootstrap elements for Gloria project. 
 
 ## building & developing
 
